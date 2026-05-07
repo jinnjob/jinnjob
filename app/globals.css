@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:      #07070f;
+  --bg2:     #0c0c18;
+  --card:    #0f0f1c;
+  --card2:   #161628;
+  --purple:  #8B3DFF;
+  --violet:  #C26BFF;
+  --gold:    #f59e0b;
+  --green:   #22c55e;
+  --border:  rgba(139,61,255,0.2);
+  --glow:    rgba(139,61,255,0.5);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: #eeeeff;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* Utility classes */
+.font-display { font-family: 'Syne', sans-serif; }
+
+.glow-text {
+  color: var(--violet);
+  text-shadow: 0 0 40px rgba(194,107,255,0.6);
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-gradient-to-r from-[#8B3DFF] to-[#C26BFF]
+         text-white font-semibold rounded-2xl px-6 py-3 transition-all duration-200
+         hover:scale-105 hover:shadow-[0_0_40px_rgba(139,61,255,0.6)];
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2 border border-[rgba(139,61,255,0.4)]
+         text-white rounded-2xl px-6 py-3 transition-all duration-200
+         hover:border-[#8B3DFF] hover:bg-[rgba(139,61,255,0.08)];
+}
+
+.card {
+  @apply bg-[#0f0f1c] border border-[rgba(139,61,255,0.15)] rounded-2xl;
+}
+
+.live-badge {
+  @apply bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-md;
+}
+
+.ai-badge {
+  @apply bg-[#8B3DFF] text-white text-xs font-bold px-2 py-0.5 rounded-md;
+}
